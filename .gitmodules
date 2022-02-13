@@ -1,4 +1,4 @@
 [submodule "tt-txrx-lib-ios-swift"]
 	path = tt-txrx-lib-ios-swift
-	url = https://github.com/tertiumtechnology/tt-txrx-lib-ios-swift
+	url = https://github.com/afrade/tt-txrx-lib-ios-swift.git
 	branch = master
