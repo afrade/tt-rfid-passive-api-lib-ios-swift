@@ -22,10 +22,11 @@
  * THE SOFTWARE.
  */
 import Foundation
-import TxRxLib
+//import TxRxLib
 
 /// Represents the RFID/NFC tag reader
-public class PassiveReader: TxRxDeviceDataProtocol, ZhagaReaderProtocol {
+@objc(PassiveReader)
+public class PassiveReader: NSObject, TxRxDeviceDataProtocol, ZhagaReaderProtocol {
     /// Passive reader internal state constants
 	static internal let ERROR_STATUS: Int = -1
     static internal let NOT_INITIALIZED_STATUS: Int = 0
@@ -212,7 +213,7 @@ public class PassiveReader: TxRxDeviceDataProtocol, ZhagaReaderProtocol {
 	
 	internal var tagID: [UInt8]?
 	
-	internal var status: Int
+    @objc public dynamic var status: Int
     internal var sub_status: Int
     internal var sequential: Int = 0
 	internal var pending: Int = 0
@@ -442,7 +443,7 @@ public class PassiveReader: TxRxDeviceDataProtocol, ZhagaReaderProtocol {
         return PassiveReader._sharedInstance
     }
     
-	init() {
+    override init() {
         status = PassiveReader.NOT_INITIALIZED_STATUS
         //deviceManager._delegate = self
         sequential = 0

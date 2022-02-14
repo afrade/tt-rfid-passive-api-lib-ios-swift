@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 import Foundation
-import TxRxLib
+//import TxRxLib
 
 /// Performs the scanning of Tertium Ble Devices
 public class Scanner: TxRxDeviceScanProtocol {

@@ -23,7 +23,8 @@
  */
 import Foundation
 
-public class Tag {
+@objc(Tag)
+public class Tag : NSObject {
     private static let DEFAULT_TIMEOUT: Int = 2000
     internal let ID: [UInt8]
     var reverseID: Bool
@@ -58,7 +59,7 @@ public class Tag {
     /// Get the tag ID
     ///
     /// - returns - the tag id
-    public func getID() -> [UInt8] {
+    @objc public func getID() -> [UInt8] {
         return ID
     }
     

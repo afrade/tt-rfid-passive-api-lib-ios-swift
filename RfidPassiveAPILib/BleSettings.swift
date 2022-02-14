@@ -22,7 +22,7 @@
  * THE SOFTWARE.
  */
 import Foundation
-import TxRxLib
+//import TxRxLib
 
 public class BleSettings
 {

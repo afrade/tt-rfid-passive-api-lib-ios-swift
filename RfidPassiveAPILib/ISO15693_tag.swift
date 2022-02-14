@@ -23,6 +23,7 @@
  */
 import Foundation
 
+@objc(ISO15693_tag)
 public class ISO15693_tag: Tag {
 	/// Class Constructor
 	///
@@ -39,7 +40,7 @@ public class ISO15693_tag: Tag {
     /// 
     /// - parameter address - the tag memory address
     /// - parameter blocks - the number of memory 4-byte blocks to read (1-25)
-    public func read(address: Int, blocks: Int) {
+    @objc public func read(address: Int, blocks: Int) {
         var commandBytes = [UInt8](repeating: 0, count: 12)
 		
         if (passiveReader.status != PassiveReader.READY_STATUS) {
@@ -83,7 +84,7 @@ public class ISO15693_tag: Tag {
     /// 
     /// - parameter address - the tag memory address
     /// - parameter data - the data bytes to write
-    public func write(address: Int, data: [UInt8]) {
+    @objc public func write(address: Int, data: [UInt8]) {
         var commandBytes = [UInt8](repeating: 0, count: 12)
 		
         if (passiveReader.status != PassiveReader.READY_STATUS) {
